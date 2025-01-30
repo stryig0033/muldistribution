@@ -162,7 +162,6 @@ classification_dict = {
     # ------ その他系 ------
     "麻酔科": [
         {
-            # 「麻酔科」や「麻酔」で拾いたいなら partial でも良い
             "any": [("麻", "partial"), ('ペイン', 'partial')]
         }
     ],
