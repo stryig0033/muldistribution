@@ -71,40 +71,46 @@ def classify_keywords(
         override_assigned = False
         if override_map:
             for ov_key, ov_categories in override_map.items():
-                # ov_categoriesが文字列かリストかで処理が異なる
-                # 今回は「リスト前提」として実装
-                if match_word(keyword, ov_key, override_match_type):
-                    # ここで「複数カテゴリ」をループで割り当てる
+                # ov_key が文字列か、タプル(リスト)かでハンドリングを変える
+                if isinstance(ov_key, (tuple, list)):
+                    # タプル/リスト内のいずれかに match_word()すればヒットとみなす
+                    hit = any(match_word(keyword, single_key, override_match_type)
+                              for single_key in ov_key)
+                else:
+                    # 文字列なら従来通り
+                    hit = match_word(keyword, ov_key, override_match_type)
+
+                if hit:
+                    # ov_categories も1個か複数かもしれないので、ループでappend
+                    if isinstance(ov_categories, str):
+                        ov_categories = [ov_categories]
                     for cat in ov_categories:
                         classified[cat].append(keyword)
                         matched_categories.append(cat)
                     override_assigned = True
 
                     if not multiple:
-                        # singleモードの場合は、override で見つかった時点で打ち切り
-                        break
+                        break  # singleモードでは最初にヒットした時点で打ち切り
 
-            # override でマッチ済かつ multiple=False の場合は、続きのルール判定へ行かずに次のkeywordへ
+            # overrideでマッチして、かつ multiple=Falseなら次のkeywordへ
             if override_assigned and not multiple:
                 continue
 
         # --------------------------
-        # 2) overrideで該当しなかった or multiple=True なら通常ルールへ
+        # override でマッチしなかった or multiple=True の場合 → 通常ルール
         # --------------------------
         if not override_assigned or multiple:
             for category, rules in classification_dict.items():
                 if category == "分類不可":
                     continue
-                # いずれかのruleを満たせばOK
                 if any(check_rule(keyword, r) for r in rules):
                     classified[category].append(keyword)
                     matched_categories.append(category)
                     if not multiple:
-                        # singleモード：最初にマッチしたカテゴリのみで打ち切り
                         break
 
         # --------------------------
-        # 3) いずれの手段でもマッチ0件なら「分類不可」
+        # いずれの手段でもマッチしなかったら「分類不可」
         # --------------------------
         if not matched_categories:
             classified["分類不可"].append(keyword)
