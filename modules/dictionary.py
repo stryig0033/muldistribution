@@ -7,42 +7,49 @@ classification_dict = {
     ],
     "一般内科": [
         {
-            "any": [("一般内科", "partial"), ("人間ドック", "partial"), ("予防接種", "partial"), ("総合内科", 'partial'), ('健康診断', 'partial'), ('健診', 'partial')]
+            "any": [("一般内科", "partial"), ("人間ドック", "partial"), ("予防接種", "partial"), ("総合内科", 'partial'), ('健康診断', 'partial'), ('健診', 'partial')],
+            "not": [('外科', 'partial')],
         }
     ],
     "呼吸器内科": [
         {
             "must": [("内", "partial")],
-            "any": [("呼吸", "partial"), ("呼", "partial")]
+            "any": [("呼吸", "partial"), ("呼", "partial")],
+            "not": [('外科', 'partial')],
         }
     ],
     "消化器内科": [
         {
             "must": [('内', 'partial')],
-            "any":  [("消化", "partial"), ("胃", "partial"), ("腸", "partial"), ('消', 'partial')]
+            "any":  [("消化", "partial"), ("胃", "partial"), ("腸", "partial"), ('消', 'partial')],
+            "not": [('外科', 'partial')],
         }
     ],
     "循環器内科": [
         {
             "must": [("内", "partial")],
-            "any": [("循環器", "partial"), ("循", "partial")]
+            "any": [("循環器", "partial"), ("循", "partial")],
+            "not": [('外科', 'partial')],
         }
     ],
     "腎臓・内分泌内科":[
         {
             "must": [("内", "partial")],
-            "any": [("透析", "partial"), ("腎臓", 'partial'), ('甲状腺', 'partial')]
+            "any": [("透析", "partial"), ("腎臓", 'partial'), ('甲状腺', 'partial')],
+            "not": [('外科', 'partial')],
         }
     ],
     "糖尿病・代謝内科":[
         {
-            "any": [("糖尿", "partial"), ("代謝", "partial")]
+            "any": [("糖尿", "partial"), ("代謝", "partial")],
+            "not": [('外科', 'partial')],
         }
     ],
     "血液・腫瘍内科":[
         {
             "must": [("内", "partial")],
-            "any": [("血", "partial"), ("腫瘍", "partial")]
+            "any": [("血", "partial"), ("腫瘍", "partial")],
+            "not": [('外科', 'partial')],
         }
     ],
     "アレルギー科": [
@@ -58,7 +65,8 @@ classification_dict = {
     ],
     "感染症内科": [
         {
-            "any": [("感染", "partial"), ("性病", "partial")]
+            "any": [("感染", "partial"), ("性病", "partial")],
+            "not": [('外科', 'partial')],
         }
     ],
     "老年科": [
@@ -69,13 +77,15 @@ classification_dict = {
     "心療内科": [
         {
             "must": [("内", "partial")],
-            "any": [("心療", "partial"), ('心身', 'partial')]
+            "any": [("心療", "partial"), ('心身', 'partial')],
+            "not": [('外科', 'partial')],
         }
     ],
     "肝・胆・膵内科": [
         {
             "must": [('内', 'partial')],
-            "any": [("肝", "partial"), ("胆", "partial"), ("膵", "partial")]
+            "any": [("肝", "partial"), ("胆", "partial"), ("膵", "partial")],
+            "not": [('外', 'partial')],
         }
     ],
 
@@ -87,47 +97,54 @@ classification_dict = {
     ],
     "一般外科": [
         {
-            "any": [("一般外科", "partial"), ("総合内科", 'partial')]
+            "any": [("一般外科", "partial"), ("総合外科", 'partial')]
         }
     ],
     "呼吸器外科": [
         {
             "must": [("外", "partial")],
-            "any": [("呼吸", "partial"), ("呼", "partial")]
+            "any": [("呼吸", "partial"), ("呼", "partial")],
+            "not": [('内科', 'partial')],
         }
     ],
     "消化器外科": [
         {
             "must": [('外', 'partial')],
-            "any":  [("消化", "partial"), ("胃", "partial"), ("腸", "partial"), ('消', 'partial')]
+            "any":  [("消化", "partial"), ("胃", "partial"), ("腸", "partial"), ('消', 'partial')],
+            "not": [('内科', 'partial')],
         }
     ],
     "循環器外科": [
         {
             "must": [("外", "partial")],
-            "any": [("循環器", "partial"), ("循", "partial")]
+            "any": [("循環器", "partial"), ("循", "partial")],
+            "not": [('内科', 'partial')],
         }
     ],
     "大腸・肛門外科": [
         {
-            "any": [('大腸', 'partial'), ('肛', 'partial'), ('こう', "partial")]
+            "any": [('大腸', 'partial'), ('肛', 'partial'), ('こう', "partial")],
+            "not": [('内科', 'partial')],
         }
     ],
     "肝・胆・膵外科": [
         {
             "must": [('外', 'partial')],
-            "any": [("肝", "partial"), ("胆", "partial"), ("膵", "partial")]
+            "any": [("肝", "partial"), ("胆", "partial"), ("膵", "partial")],
+            "not": [('内科', 'partial')],
         }
     ],
     "血管外科": [
         {
             "must": [('外', 'partial')],
-            'any': [('血', 'partial')]
+            'any': [('血', 'partial')],
+            "not": [('内科', 'partial')],
         }
     ],
     "乳腺・内分泌外科": [
         {
-            "any": [('乳腺', 'partial'), ('内分泌外', 'partial')]
+            "any": [('乳腺', 'partial'), ('内分泌外', 'partial')],
+            "not": [('内科', 'partial')],
         }
     ],
     "人工臓器・移植外科": [
@@ -138,13 +155,15 @@ classification_dict = {
     ],
     "心臓外科": [
         {
-            "must": [("外", "partial"), ("心臓","partial")]
+            "must": [("外", "partial"), ("心臓","partial")],
+            "not": [('内科', 'partial')],
         }
     ],
     "呼吸器外科": [
         {
             "must": [("外", "partial")],
-            "any": [("呼吸", "partial")]
+            "any": [("呼吸", "partial")],
+            "not": [('内科', 'partial')],
         }
     ],
     "脳神経外科": [
@@ -155,7 +174,8 @@ classification_dict = {
     "腎臓・内分泌外科":[
         {
             "must": [("外", "partial")],
-            "any": [("透析", "partial"), ("腎臓", 'partial'), ('甲状腺', 'partial')]
+            "any": [("透析", "partial"), ("腎臓", 'partial'), ('甲状腺', 'partial')],
+            "not": [('内科', 'partial')],
         }
     ],
 
@@ -187,7 +207,7 @@ classification_dict = {
     ],
     "耳鼻咽喉科・頭頸部外科": [
         {
-            "any": [("耳鼻", "partial"), ("じび", "partial"), ('咽喉', 'partial'), ("いんこう", "partial"), ('頭頸部', 'partial')]
+            "any": [("耳鼻", "partial"), ("じび", "partial"), ('咽喉', 'partial'), ("いんこう", "partial"), ('頭頸部', 'partial'), ("耳咽", 'partial')]
         }
     ],
     "リハビリテーション科": [
