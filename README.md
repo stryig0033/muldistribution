@@ -1,9 +1,9 @@
 # Data preprocessing for medical muldistribution analysis
-'''
+```
 python -m venv .venv
 source .venv/bin/activate #mac
 pip install -r requirements.txt
-'''
+```
 preprocessed poi data using these codes.
 - classification_results/20##_classified.csv
     - classification results of each years
