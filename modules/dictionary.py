@@ -21,7 +21,7 @@ classification_dict = {
     "消化器内科": [
         {
             "must": [('内', 'partial')],
-            "any":  [("消化", "partial"), ("胃", "partial"), ("腸", "partial"), ('消', 'partial'), ('視', 'partial')],# 視 for 内視鏡
+            "any":  [("消化", "partial"), ("胃", "partial"), ("腸", "partial"), ('消', 'partial'), ('視', 'partial'), ('食', 'partial')],# 視 for 内視鏡
             "not": [('外科', 'partial')],
         }
     ],
@@ -226,7 +226,7 @@ classification_dict = {
     ],
     "小児科": [
         {
-            "any": [("児", "partial"), ('新生児', 'partial'), ("児童", 'partial'), ('子', 'partial')],
+            "any": [("児", "partial"), ('新生児', 'partial'), ("児童", 'partial'), ('子', 'partial'), ('小', 'partial')],
             "not": [('外', 'partial')],
         }
     ],
