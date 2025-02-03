@@ -40,7 +40,7 @@ Each word also has a `"partial"` or `"exact"` setting:
 Using this reference table, classification is executed in `modules/classify.py`.
 
 ## About `override_map_20##`
-This is dictionary data used to perform individual classifications for each Excel file.  
+This is dictionary data used to perform custom classifications for each Excel file.  
 Cases where there is no distinction between internal medicine and surgery, or where a special expression refers to two or more medical departments, are also handled here.
 - The **left column** contains the **target words for classification**.
 - The **right column** specifies the **medical department** to which each word should be assigned.
