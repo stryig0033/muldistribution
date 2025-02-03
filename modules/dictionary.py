@@ -18,6 +18,13 @@ classification_dict = {
             "not": [('外科', 'partial')],
         }
     ],
+    "気管食道内科": [
+        {
+            "must": [("内", "partial")],
+            "any": [("気", "partial"), ("食", "partial")], 
+            "not": [('外科', 'partial')],
+        }
+    ],
     "消化器内科": [
         {
             "must": [('内', 'partial')],
@@ -106,6 +113,13 @@ classification_dict = {
             "not": [('内科', 'partial')],
         }
     ],
+    "気管食道外科": [
+        {
+            "must": [("外", "partial")],
+            "any": [("気", "partial"), ("食", "partial")], 
+            "not": [('内科', 'partial')],
+        }
+    ],
     "消化器外科": [
         {
             "must": [('外', 'partial')],
@@ -116,7 +130,7 @@ classification_dict = {
     "循環器外科": [
         {
             "must": [("外", "partial")],
-            "any": [("循環器", "partial"), ("循", "partial"), ('心', 'partial')],
+            "any": [("循環器", "partial"), ("循", "partial")],
             "not": [('内科', 'partial')],
         }
     ],
@@ -133,16 +147,10 @@ classification_dict = {
             "not": [('内科', 'partial')],
         }
     ],
-    "血管外科": [
+    "心臓・血管外科": [
         {
             "must": [('外', 'partial')],
-            'any': [('血', 'partial')],
-            "not": [('内科', 'partial')],
-        }
-    ],
-    "乳腺・内分泌外科": [
-        {
-            "any": [('乳', 'partial'), ('内分泌外', 'partial')],
+            'any': [('血', 'partial'), ("心","partial")],
             "not": [('内科', 'partial')],
         }
     ],
@@ -150,19 +158,6 @@ classification_dict = {
         {
             # "must": [('外', "partial")],
             "any": [('人工臓器', 'partial'), ('移', 'partial')]
-        }
-    ],
-    # "心臓外科": [
-    #     {
-    #         "must": [("外", "partial"), ("心臓","partial")],　　循環器外科と統合
-    #         "not": [('内科', 'partial')],
-    #     }
-    # ],
-    "呼吸器外科": [
-        {
-            "must": [("外", "partial")],
-            "any": [("呼吸", "partial")],
-            "not": [('内科', 'partial')],
         }
     ],
     "脳神経外科": [
@@ -173,8 +168,18 @@ classification_dict = {
     "腎臓・内分泌外科":[
         {
             "must": [("外", "partial")],
-            "any": [("透析", "partial"), ("腎臓", 'partial'), ('甲状腺', 'partial'), ('内分内', 'partial'), ('人工透内', 'partial')],
+            "any": [("透析", "partial"), ("腎臓", 'partial'), ('甲状腺', 'partial'), ('内分泌', 'partial'), ('人工透内', 'partial'), ('乳腺', 'partial')],  # 腎臓、乳腺、甲状腺、人工透析 etc...
             "not": [('内科', 'partial')],
+        }
+    ],
+    "整形外科": [
+        {
+            "any": [("整", "partial"), ('レントゲン', 'partial'), ('ﾚﾝﾄｹﾞﾝ', 'partial'), ('ペ', 'partial'), ('ぺ', 'partial'),  ('ﾍﾟ', 'partial'), ('膝関節', 'partial'), ("物理療法", 'partial')]
+        }
+    ],
+    "形成外科・美容外科": [
+        {
+            "any": [('形', 'partial'), ('美', 'partial'),('ボトックス', 'partial'), ('プラセンタ', 'partial'), ('ﾎﾞﾄｯｸｽ', 'partial'), ('ﾌﾟﾗｾﾝﾀ', 'partial')]
         }
     ],
 
@@ -199,11 +204,6 @@ classification_dict = {
             "any": [('眼', 'partial'), ('コンタクト', 'partial'), ('ｺﾝﾀｸﾄ', 'partial')]
         }
     ],
-    "整形外科": [
-        {
-            "any": [("整", "partial"), ('レントゲン', 'partial'), ('ﾚﾝﾄｹﾞﾝ', 'partial'), ('ペ', 'partial'), ('ぺ', 'partial'),  ('ﾍﾟ', 'partial'), ('膝関節', 'partial'), ("物理療法", 'partial')]
-        }
-    ],
     "耳鼻咽喉科・頭頸部外科": [
         {
             "any": [("耳", "partial"), ("鼻", "partial"), ("じび", "partial"), ('咽', 'partial'), ('喉', 'partial'), ("いんこう", "partial"), ('頭', 'partial'), ("頸", "partial")]
@@ -212,11 +212,6 @@ classification_dict = {
     "リハビリテーション科": [
         {
             "any": [('リハ', 'partial'), ('ﾘﾊ', 'partial'), ('ﾘハ', 'partial')]
-        }
-    ],
-    "形成外科・美容外科": [
-        {
-            "any": [('形', 'partial'), ('美', 'partial'),('ボトックス', 'partial'), ('プラセンタ', 'partial'), ('ﾎﾞﾄｯｸｽ', 'partial'), ('ﾌﾟﾗｾﾝﾀ', 'partial')]
         }
     ],
     "歯科・口腔顎顔面外科": [
