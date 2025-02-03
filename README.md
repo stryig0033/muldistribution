@@ -1,11 +1,11 @@
-# Data preprocessing for medical muldistribution analysis
+# Data classification for medical muldistribution analysis
 setup
 ```terminal
 python -m venv .venv
 source .venv/bin/activate #mac
 pip install -r requirements.txt
 ```
-preprocessed poi data using these codes.
+classified data using these codes.
 - classification_results/20##_classified.csv
     - Classification results for each year.
 - input_data/20##.csv
@@ -20,9 +20,9 @@ preprocessed poi data using these codes.
 - 20##_dpt_name_classification.ipynb
     - Run this notebook to classify unique department names into their respective categories.
 
-# Preprocessing Overview
+# Classification Overview
 
-In this preprocessing, the general character classification rules are defined in `modules/dictionary.py`.  
+In this Classificatin, the general character classification rules are defined in `modules/dictionary.py`.  
 Additionally, if individual classifications are required for specific files, those classification rules are defined in the variable `override_map_20##` within `20##_dpt_name_classification.ipynb`.
 
 ## About `modules/dictionary.py`
