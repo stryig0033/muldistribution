@@ -1,6 +1,6 @@
 classification_dict = {
     # ------ 内科系 ------
-    "内科": [
+    "内科系": [
         {
             "any": [("内科", "partial")]
         }
@@ -55,7 +55,20 @@ classification_dict = {
     "血液・腫瘍内科":[
         {
             "must": [("内", "partial")],
-            "any": [("血", "partial"), ("腫瘍", "partial")],
+            "any": [("血液", "partial"), ("腫瘍", "partial")],
+            "not": [('外科', 'partial')],
+        }
+    ],
+    "脳神経内科": [
+        {
+            "must": [("内", "partial")],
+            "any": [('脳', 'partial'), ('神経', 'partial'), ('脳神', 'partial')]
+        }
+    ],
+    "心臓・血管内科": [
+        {
+            "must": [('内', 'partial')],
+            'any': [('血管', 'partial'), ("心臓","partial")],
             "not": [('外科', 'partial')],
         }
     ],
@@ -83,7 +96,7 @@ classification_dict = {
     "心療内科": [
         {
             "must": [("内", "partial")],
-            "any": [("心", "partial"), ('心身', 'partial')],
+            "any": [("心療", "partial"), ('心身', 'partial')],
             "not": [('外科', 'partial')],
         }
     ],
@@ -96,9 +109,9 @@ classification_dict = {
     ],
 
     # ------ 外科系 ------
-    "外科": [
+    "外科系": [
         {
-            "any": [("外", "partial")]
+            "any": [("外科", "partial")]
         }
     ],
     "一般外科": [
@@ -136,7 +149,7 @@ classification_dict = {
     ],
     "大腸・肛門外科": [
         {
-            "any": [('大腸', 'partial'), ('肛', 'partial'), ('こう', "partial")],
+            "any": [('大腸', 'partial'), ('肛', 'partial')],
             "not": [('内科', 'partial')],
         }
     ],
@@ -162,7 +175,8 @@ classification_dict = {
     ],
     "脳神経外科": [
         {
-            "any": [('脳', 'partial'), ('神経', 'partial'), ('脳神', 'partial')]
+            "any": [('脳', 'partial'), ('神経', 'partial'), ('脳神', 'partial')],
+            "not": [('内科', 'partial')]
         }
     ],
     "腎臓・内分泌外科":[
@@ -179,7 +193,7 @@ classification_dict = {
     ],
     "形成外科・美容外科": [
         {
-            "any": [('形', 'partial'), ('美', 'partial'),('ボトックス', 'partial'), ('プラセンタ', 'partial'), ('ﾎﾞﾄｯｸｽ', 'partial'), ('ﾌﾟﾗｾﾝﾀ', 'partial')]
+            "any": [('形成', 'partial'), ('美', 'partial'),('ボトックス', 'partial'), ('プラセンタ', 'partial'), ('ﾎﾞﾄｯｸｽ', 'partial'), ('ﾌﾟﾗｾﾝﾀ', 'partial')]
         }
     ],
 
@@ -222,7 +236,7 @@ classification_dict = {
     "小児科": [
         {
             "any": [("児", "partial"), ('新生児', 'partial'), ("児童", 'partial'), ('子', 'partial'), ('小', 'partial')],
-            "not": [('外', 'partial')],
+            "not": [('外', 'partial'), ("歯科", "partial")],
         }
     ],
     "小児外科": [
