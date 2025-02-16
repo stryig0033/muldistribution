@@ -70,7 +70,7 @@ classification_dict = {
         {
             "must": [('内', 'partial')],
             'any': [('血管', 'partial'), ("心臓","partial")],
-            "not": [('外科', 'partial')],
+            "not": [('外科', 'partial'), ("脳血管内科", "partial")],
         }
     ],
     "アレルギー科": [
