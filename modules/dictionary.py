@@ -25,6 +25,14 @@ classification_dict = {
             "not": [('外科', 'partial')],
         }
     ],
+    "耳鼻咽喉内科": [
+        {
+
+           # something
+
+        }
+
+    ],
     "消化器内科": [
         {
             "must": [('内', 'partial')],
@@ -66,6 +74,11 @@ classification_dict = {
             "not": [('外科', 'partial'), ('脳神経リハビリテーション科', 'partial'), ("脳神経外科リハビリテーション科", 'partial')],
         }
     ],
+    "脳血管内科": [
+        {
+            #something
+        }
+    ],
     "心臓・血管内科": [
         {
             "must": [('内', 'partial')],
@@ -87,6 +100,11 @@ classification_dict = {
         {
             "any": [("感染", "partial"), ("性感", "partial"), ('エイズ', 'partial'), ('感内', 'partial'), ('性病', 'partial')],
             "not": [('外科', 'partial')],
+        }
+    ],
+    "泌尿器内科":[
+        {
+            #something
         }
     ],
     "老年科": [
@@ -215,9 +233,9 @@ classification_dict = {
             "not": [('整形外科（理学療法・麻酔）', 'partial')],
         }
     ],
-    "泌尿器科": [
+    "泌尿器外科": [
         {
-            "any": [('泌尿', 'partial'), ('頻尿', 'partial'), ('ひ尿', 'partial'), ("泌外", "partial"), ('尿', 'partial'), ('腎', 'partial'), ('膀胱', 'partial'), ('前立腺', 'partial'), ('膀', 'partial'), ('前立', 'partial'), ('尿路', 'partial'), ("男泌", "partial"), ('女泌', 'partial')],
+           #something
         }
     ],
     "皮膚科": [
@@ -243,6 +261,11 @@ classification_dict = {
     "歯科・口腔顎顔面外科": [
         {
             "any": [('歯', 'partial'), ('口腔', 'partial'), ('顎', 'partial'), ('インプラント', 'partial'), ('ｲﾝﾌﾟﾗﾝﾄ', 'partial'), ('矯正', 'partial'), ('ホワイトニング', 'partial'), ('ﾎﾜｲﾄﾆﾝｸﾞ', 'partial')], 
+        }
+    ],
+    "小児歯科": [
+        {
+            #something
         }
     ],
     "小児科": [
