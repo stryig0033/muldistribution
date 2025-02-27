@@ -93,7 +93,7 @@ def classify_keywords(
                         break  # singleモードでは最初にヒットした時点で打ち切り
 
             # overrideでマッチして、かつ multiple=Falseなら次のkeywordへ
-            if override_assigned and not multiple:
+            if override_assigned:
                 continue
 
         # --------------------------
