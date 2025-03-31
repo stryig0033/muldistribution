@@ -7,7 +7,13 @@ classification_dict = {
     ],
     "一般内科": [
         {
-            "any": [('内科', 'exact'), ("総合内科", "partial"), ("一般内科", "partial"), ("人間ドック", "partial"), ("予防接種", "partial"), ("総合内科", 'partial'), ('健康診断', 'partial'), ('漢方専門', 'partial'), ('漢方科', 'partial'), ('漢内', 'partial'), ('在宅', 'partial')],
+            "any": [('内科', 'exact'), ("総合内科", "partial"), ("一般内科", "partial"), ("総合内科", 'partial')],
+            "not": [('外科', 'partial')],
+        }
+    ],
+    "内科_特殊問診":[
+        {
+            "any": [('禁煙外来', 'partial'), ("禁煙", "partial"), ('禁煙', 'partial'), ('禁煙外来', 'partial'), ('禁煙治療', 'partial'), ('禁煙治療外来', 'partial'), ('禁煙外来治療', 'partial'), ('禁煙外来専門', 'partial'), ('禁煙外来専門医', 'partial'), ("女性診療", "partial"), ('女性外来', 'partial'), ('女性医療', 'partial'), ('女性内科', 'partial'), ('女性内科外来', 'partial'), ('女性内科専門外来', 'partial'), ('女性内科専門医', 'partial'), ('女性内科専門医外来', 'partial'), ('女性内科専門医外来診療', 'partial'), ('女性内科専門医外来診療所', 'partial'), ("男性診療", "partial"), ('男性外来', 'partial'), ('男性医療', 'partial'), ('男性内科', 'partial'), ('男性内科外来', 'partial'), ('男性内科専門外来', 'partial'), ('男性内科専門医', 'partial'), ('男性内科専門医外来', 'partial'), ('男性内科専門医外来診療', 'partial'), ('男性内科専門医外来診療所', 'partial')],
             "not": [('外科', 'partial')],
         }
     ],
@@ -50,7 +56,7 @@ classification_dict = {
     "循環器内科": [
         {
             "must": [("内", "partial")],
-            "any": [("循環器", "partial"), ("循", "partial")],
+            "any": [("循環器", "partial"), ("循", "partial"), ("心臓血管","partial"), ("心血", "partical"), ('心臓', 'partial'), ('血管', 'partial')],
             "not": [('外科', 'partial')],
         }
     ],
@@ -68,17 +74,17 @@ classification_dict = {
             "not": [('外科', 'partial')],
         }
     ],
-    "心臓・血管内科": [
-        {
-            "must": [('内', 'partial')],
-            'any': [ ("心臓血管","partial"), ("心血", "partical"), ('心臓', 'partial'), ('血管', 'partial')],
-            "not": [('外科', 'partial'), ("脳血管内科", "partial")],
-        }
-    ],
+    # "心臓・血管内科": [
+    #     {
+    #         "must": [('内', 'partial')],
+    #         'any': [ ("心臓血管","partial"), ("心血", "partical"), ('心臓', 'partial'), ('血管', 'partial')],
+    #         "not": [('外科', 'partial'), ("脳血管内科", "partial")],
+    #     }
+    # ],
     "泌尿器内科":[
         {
             "must": [("内", "partial")],
-            "any": [("泌尿", "partial"), ('尿器', 'partial'), ('尿路', 'partial'), ('尿管', 'partial')],
+            "any": [("泌尿", "partial"), ('尿器', 'partial'), ('尿路', 'partial'), ('尿管', 'partial'), ("男性不妊", "partial")],
             "not": [('外科', 'partial')],
         }
     ],
@@ -99,7 +105,14 @@ classification_dict = {
     "内分泌内科":[
         {
             "must": [("内", "partial")],
-            "any": [('内分泌', 'partial'), ('乳腺', 'partial'), ('甲状腺', 'partial'), ("甲内", "partial"),],
+            "any": [('内分泌', 'partial'), ('甲状腺', 'partial'), ("甲内", "partial"),],
+            "not": [('外科', 'partial')],
+        }
+    ],
+    "乳腺内科":[
+        {
+            "must": [("内", "partial")],
+            "any": [('乳腺', 'partial'), ('乳', 'partial'), ('乳がん', 'partial'), ('乳癌', 'partial')],
             "not": [('外科', 'partial')],
         }
     ],
@@ -131,6 +144,7 @@ classification_dict = {
     ],
     "感染症内科": [
         {
+            "must": [("内", "partial")],
             "any": [("感染", "partial"), ("性感", "partial"), ('エイズ', 'partial'), ('感内', 'partial'), ('性病', 'partial')],
             "not": [('外科', 'partial')],
         }
@@ -152,6 +166,12 @@ classification_dict = {
     "一般外科": [
         {
             "any": [('外科', 'exact'), ("一般外科", "partial"), ("総合外科", 'partial')]
+        }
+    ],
+    "外科_特殊問診":[
+        {
+            "any": [('禁煙外来', 'partial'), ("禁煙", "partial"), ('禁煙', 'partial'), ('禁煙外来', 'partial'), ('禁煙治療', 'partial'), ('禁煙治療外来', 'partial'), ('禁煙外来治療', 'partial'), ('禁煙外来専門', 'partial'), ('禁煙外来専門医', 'partial'), ("女性診療", "partial"), ('女性外来', 'partial'), ('女性医療', 'partial'), ("男性診療", "partial"), ('男性外来', 'partial'), ('男性医療', 'partial')],
+            "not": [('内科', 'partial')],
         }
     ],
     "呼吸器外科": [
@@ -199,10 +219,15 @@ classification_dict = {
     "脳神経外科": [
         {
             "must": [('外', 'partial')],
-            "any": [('脳', 'partial'), ('神経', 'partial'), ('脳神', 'partial')],
+            "any": [('脳', 'partial'), ('神経', 'partial'), ('脳神', 'partial'), ('血', 'partial'), ("心","partial")],
             "not": [('内科', 'partial'), ('脳神経リハビリテーション科', 'partial')]
         }
     ],
+    # "脳外科": [
+    #     {
+
+    #     }
+    # ],
     "脳血管外科": [
         {
             "must": [("外", "partial")],
@@ -210,13 +235,13 @@ classification_dict = {
             "not": [('内科', 'partial')],
         }
     ],
-    "心臓・血管外科": [
-        {
-            "must": [('外', 'partial')],
-            'any': [('血', 'partial'), ("心","partial")],
-            "not": [('内科', 'partial')],
-        }
-    ],
+    # "心臓・血管外科": [
+    #     {
+    #         "must": [('外', 'partial')],
+    #         'any': [('血', 'partial'), ("心","partial")],
+    #         "not": [('内科', 'partial')],
+    #     }
+    # ],
     "人工臓器・移植外科": [
         {
             # "must": [('外', "partial")],
@@ -258,6 +283,13 @@ classification_dict = {
             "not": [('内科', 'partial')],
         }
     ],
+    "感染症外科": [
+        {
+            "must": [("外", "partial")],
+            "any": [("感染", "partial"), ("性感", "partial"), ('エイズ', 'partial'), ('感内', 'partial'), ('性病', 'partial')],
+            "not": [('内科', 'partial')],
+        }
+    ],
 
     # ------ その他系 ------
     "アレルギー科": [
@@ -272,8 +304,13 @@ classification_dict = {
     ],
     "整形外科": [
         {
-            "any": [("整", "partial"), ('レントゲン', 'partial'), ('ﾚﾝﾄｹﾞﾝ', 'partial'), ('ペ', 'partial'), ('ぺ', 'partial'),  ('ﾍﾟ', 'partial'), ('膝関節', 'partial'), ("物理療法", 'partial')],
+            "any": [("整", "partial"), ('レントゲン', 'partial'), ('ﾚﾝﾄｹﾞﾝ', 'partial'), ('膝関節', 'partial'), ("物理療法", 'partial')],
             "not": [('麻酔科', 'partial')],
+        }
+    ],
+    "ペインクリニック": [
+        {
+            "any": [('ペイン', 'partial'), ('ペインクリニック', 'partial'), ('痛み', 'partial'), ('痛み外来', 'partial'), ('痛み治療', 'partial'), ('痛み科', 'partial'), ('痛み専門外来', 'partial')]
         }
     ],
     "形成外科・美容外科": [
@@ -294,7 +331,7 @@ classification_dict = {
     ],
     "リハビリテーション科": [
         {
-            "any": [('リハ', 'partial'), ('ﾘﾊ', 'partial'), ('ﾘハ', 'partial')]
+            "any": [('リハビ', 'partial'), ('ﾘﾊﾋﾞ', 'partial'), ('ﾘハ', 'partial')]
         }
     ],
     "眼科": [
@@ -332,7 +369,8 @@ classification_dict = {
     ],
     "産婦人科": [
         {
-            "any": [("産", "partial"), ("婦", "partial"), ('不妊', 'partial')]
+            "any": [("産", "partial"), ("婦", "partial"), ('不妊', 'partial')],
+            "not": [('泌尿器科', 'partial')],
         }
     ],
     "精神科": [
@@ -343,6 +381,21 @@ classification_dict = {
     "放射線科": [
         {
             "any": [('放', 'partial'), ('核', 'partial')]
+        }
+    ],
+    "漢方・中国医学":[
+        {
+            "any": [('漢方', 'partial'), ('中医', 'partial'), ('中医学', 'partial'), ('中医科', 'partial'), ('中医学科', 'partial')],
+        }
+    ],
+    "予防医学":[
+        {
+            "any": [('予防', 'partial'), ('予防接種', 'partial'), ('ワクチン', 'partial'), ('ワクチン接種', 'partial'), ("人間ドック", "partial"), ('健康診断', 'partial'), ('人間ドック', 'partial'), ('ドック', 'partial'), ('ドッグ', 'partial'), ('ドック健診', 'partial'), ('ドッグ健診', 'partial'), ('人間ドック健診', 'partial'), ('人間ドッグ健診', 'partial')],
+        }
+    ],
+    "在宅医療":[
+        {
+            "any": [('在宅', 'partial'), ('訪問', 'partial'), ('訪問診療', 'partial'), ('訪問看護', 'partial'), ('訪問リハビリテーション', 'partial'), ('訪問介護', 'partial')],
         }
     ],
     "救急・集中治療科": [
