@@ -56,22 +56,15 @@ classification_dict = {
     "循環器内科": [
         {
             "must": [("内", "partial")],
-            "any": [("循環器", "partial"), ("循", "partial"), ("心臓血管","partial"), ("心血", "partical"), ('心臓', 'partial'), ('血管', 'partial')],
+            "any": [("循環器", "partial"), ("循", "partial"), ("心臓血管","partial"), ("心血", "partical"), ('心臓', 'partial')],
             "not": [('外科', 'partial')],
         }
     ],
-    "脳神経内科": [
+    "神経内科": [
         {
             "must": [("内", "partial")],
-            "any": [('脳神', 'partial'), ('神経', 'partial')],
+            "any": [('脳神', 'partial'), ('神経', 'partial'), ('脳血', 'partial'), ("脳・血", "partial"), ("脳卒中", "partial")],
             "not": [('外科', 'partial'), ('脳神経リハビリテーション科', 'partial'), ("脳神経外科リハビリテーション科", 'partial')],
-        }
-    ],
-    "脳血管内科": [
-        {
-            "must": [("内", "partial")],
-            "any": [('脳血', 'partial'), ("脳・血", "partial"), ("脳卒中", "partial")],
-            "not": [('外科', 'partial')],
         }
     ],
     # "心臓・血管内科": [
@@ -216,10 +209,10 @@ classification_dict = {
             "not": [('内科', 'partial')],
         }
     ],
-    "脳神経外科": [
+    "神経外科": [
         {
             "must": [('外', 'partial')],
-            "any": [('脳', 'partial'), ('神経', 'partial'), ('脳神', 'partial'), ('血', 'partial'), ("心","partial")],
+            "any": [('脳', 'partial'), ('神経', 'partial'), ('脳神', 'partial'), ('血', 'partial'), ("心","partial"),('脳血', 'partial'), ("脳・血", "partial"), ("脳卒中", "partial")],
             "not": [('内科', 'partial'), ('脳神経リハビリテーション科', 'partial')]
         }
     ],
@@ -228,13 +221,7 @@ classification_dict = {
 
     #     }
     # ],
-    "脳血管外科": [
-        {
-            "must": [("外", "partial")],
-            "any": [('脳血', 'partial'), ("脳・血", "partial"), ("脳卒中", "partial")],
-            "not": [('内科', 'partial')],
-        }
-    ],
+
     # "心臓・血管外科": [
     #     {
     #         "must": [('外', 'partial')],
@@ -273,6 +260,13 @@ classification_dict = {
         {
             "must": [("外", "partial")],
             "any": [('甲状腺', 'partial'), ("甲内", "partial"), ('内分泌', 'partial'), ('乳腺', 'partial')],
+            "not": [('内科', 'partial')],
+        }
+    ],
+    "乳腺外科":[
+        {
+            "must": [("外", "partial")],
+            "any": [('乳腺', 'partial'), ('乳', 'partial'), ('乳がん', 'partial'), ('乳癌', 'partial')],
             "not": [('内科', 'partial')],
         }
     ],
@@ -325,13 +319,13 @@ classification_dict = {
     ],
     "麻酔科": [
         {
-            "any": [("麻", "partial"), ('ペ', 'partial'), ('ﾍﾟ', 'partial'),],
+            "any": [("麻", "partial"),],
             "not": [('整形外科（理学療法・麻酔）', 'partial')],
         }
     ],
     "リハビリテーション科": [
         {
-            "any": [('リハビ', 'partial'), ('ﾘﾊﾋﾞ', 'partial'), ('ﾘハ', 'partial')]
+            "any": [('リハ', 'partial'), ('ﾘﾊ', 'partial'), ('ﾘハ', 'partial')]
         }
     ],
     "眼科": [
