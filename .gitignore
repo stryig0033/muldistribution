@@ -1,5 +1,10 @@
 .venv/
-poi_medicine/
-poi_medicine_alljapan/
 .qodo
+
+# データ関連
+communications/
+test/
+dept_classi/input_data/
+dept_classi/input_data_alljapan/
 pop_meshdata
+data/
