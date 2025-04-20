@@ -8,3 +8,5 @@ dept_classi/input_data/
 dept_classi/input_data_alljapan/
 pop_meshdata
 data/
+models/grid_with_features.gpkg
+models/grid_with_poi_counts.gpkg
