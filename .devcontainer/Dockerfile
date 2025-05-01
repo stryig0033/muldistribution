@@ -7,10 +7,12 @@ FROM --platform=linux/arm64 python:${VARIANT}-slim
 #   * openpyxl などは pure-python
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
-    build-essential g++ \
-    gdal-bin libgdal-dev \
-    libproj-dev proj-data proj-bin \
-    libgeos-dev && \
+        git \
+        openssh-client \
+        build-essential g++ \
+        gdal-bin libgdal-dev \
+        libproj-dev proj-data proj-bin \
+        libgeos-dev && \
     rm -rf /var/lib/apt/lists/*
 
 # ---------- Python パッケージ ----------

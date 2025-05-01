@@ -2,7 +2,6 @@
   "name": "muldistribution-dev",
   "dockerFile": "Dockerfile",
   "context": "..",
-  "shutdownAction": "none",
   // Apple Silicon 用にビルドプラットフォームを固定
   "build": { "args": { "VARIANT": "3.12" } },
   "settings": {
@@ -13,6 +12,7 @@
     "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
   ],
   "forwardPorts": [8888, 6006],
+  "postCreateCommand": "python -m pip install -e . || true",
   "customizations": {
     "vscode": {
       "extensions": [
