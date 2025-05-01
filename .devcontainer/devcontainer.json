@@ -10,7 +10,8 @@
     "python.defaultInterpreterPath": "/usr/local/bin/python"
   },
   "mounts": [
-    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached,readonly"
   ],
   "forwardPorts": [8888, 6006],
   "customizations": {
