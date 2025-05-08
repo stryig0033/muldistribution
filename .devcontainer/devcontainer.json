@@ -6,8 +6,8 @@
   // Apple Silicon 用にビルドプラットフォームを固定
   "build": { "args": { "VARIANT": "3.12" } },
   "settings": {
-    "terminal.integrated.defaultProfile.linux": "bash",
-    "python.defaultInterpreterPath": "/usr/local/bin/python"
+    "python.defaultInterpreterPath": "/workspace/.venv/bin/python",
+    "python.terminal.activateEnvironment": true
   },
   "mounts": [
     "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
