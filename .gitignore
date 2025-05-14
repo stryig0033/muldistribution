@@ -11,3 +11,4 @@ pop_meshdata
 data/
 models/grid_with_features.gpkg
 models/grid_with_poi_counts.gpkg
+EDA/
