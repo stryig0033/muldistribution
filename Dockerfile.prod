@@ -1,0 +1,12 @@
+# ~/Research/muldistribution/Dockerfile.prod
+FROM python:3.12-slim
+
+# ❶ 依存だけイメージに焼き込む
+WORKDIR /workspace
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# ❷ エントリポイントは「python」だけにしておく
+#    → 実行するスクリプトは docker run 時に指定
+ENTRYPOINT ["python"]
+
